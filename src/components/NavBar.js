@@ -15,11 +15,11 @@ const NavBarCollapse = (props) => {
           <NavItem>
             <NavLink style={{position: 'absolute', left: '50%', transform: 'translatex(-50%)'}}>
               <Link
-                to="/home/add"
+                to="/home"
                 className="text-white"
                 style={{ textDecoration: "none" }}
               >
-                <img src={iconNav} className="img-fluid mx-auto d-block" style={{maxHeight: '50px'}}></img>
+                <img src={iconNav} className="img-fluid mx-auto d-block" style={{maxHeight: '50px'}} alt=""></img>
               </Link>
             </NavLink>
           </NavItem>
