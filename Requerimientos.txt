@@ -5,4 +5,4 @@
 -session mantenida despues del login
 -perdida de contraseña (OPC)
 -users escucha / escribe y envia reporte
--admin muestra los reportes
+-admin muestra los reportes / en cada persona ponerle notitas de personas
