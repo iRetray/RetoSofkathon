@@ -1,0 +1,13 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.image404 {
+    max-width: 70%;
+}
+
+@media screen and (max-width: 800px){
+    .image404 {
+        max-width: 100%;
+    }
+}
