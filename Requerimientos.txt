@@ -1,0 +1,8 @@
+-2 aplicaciones user / admin
+-app admin monitorea a los trabajadores
+-app users dar mi informe escrito / oral
+-login y registro
+-session mantenida despues del login
+-perdida de contraseña (OPC)
+-users escucha / escribe y envia reporte
+-admin muestra los reportes
