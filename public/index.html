@@ -9,5 +9,29 @@
   <body>
     <noscript>Necesitas activar JavaScript para usar esta aplicación.</noscript>
     <div id="app"></div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("worker.js")
+            .then(
+              function (registration) {
+                console.log(
+                  "Worker registrado correctamente",
+                  registration.scope
+                );
+              },
+              function (err) {
+                console.log("Error al registrar Worker", err);
+              }
+            )
+            .catch(function (err) {
+              console.log(err);
+            });
+        });
+      } else {
+        console.log("Service Worker is not supported by browser.");
+      }
+    </script>
   </body>
 </html>
