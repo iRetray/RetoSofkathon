@@ -21,7 +21,9 @@ const Reporter = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [editableStr, setEditableStr] = useState("");
 
+  /*eslint-disable */
   useEffect(() => obtenerSesion(), []);
+  /*eslint-disable */
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
