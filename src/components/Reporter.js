@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { Typography } from "antd";
+import { Typography, Modal } from "antd";
 import { Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,9 +11,11 @@ import {
   faDownload,
   faBackspace,
 } from "@fortawesome/free-solid-svg-icons";
+import monsterRegister from "../images/monsterRegister.png";
 const { Paragraph, Title } = Typography;
 
 const Reporter = () => {
+  const [modalVisible, setModal] = useState(false);
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(true);
   const { transcript, resetTranscript } = useSpeechRecognition();
@@ -23,6 +25,14 @@ const Reporter = () => {
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
+  }
+
+  const cerrarModal = () => {
+    setModal(false);
+  };
+
+  const abrirModal = () => {
+    setModal(true)
   }
 
   const obtenerSesion = () => {
@@ -56,6 +66,22 @@ const Reporter = () => {
     <div>
       {document.body.setAttribute("style", "background-color: #F0F2F5;")}
       <NavBar />
+      <Modal
+        title="Informe enviado correctamente"
+        visible={modalVisible}
+        onOk={cerrarModal}
+        onCancel={cerrarModal}
+      >
+        <img
+          src={monsterRegister}
+          alt=""
+          className="img-fluid"
+          style={{ padding: "50px" }}
+        />
+        <Title level={4}>
+          <center>Ahora Maeve llevará este informe a tu empresa</center>
+        </Title>
+      </Modal>
       <div style={siteLayoutContent}>
         <Title level={2}>Bienvenido, {name}</Title>
         <Paragraph style={{ marginTop: "-15px" }}>
@@ -66,12 +92,25 @@ const Reporter = () => {
         {visible ? (
           <Paragraph style={{ fontSize: "25px" }}>{transcript}</Paragraph>
         ) : (
-          <Paragraph
-            editable={{ onChange: setEditableStr }}
-            style={{ fontSize: "25px" }}
-          >
-            {editableStr}
-          </Paragraph>
+          <div>
+            <Paragraph
+              editable={{ onChange: setEditableStr }}
+              style={{ fontSize: "25px" }}
+            >
+              {editableStr}
+            </Paragraph>
+            <center>
+              <Button
+                color="success"
+                style={{ borderRadius: "20px" }}
+                onClick={abrirModal}
+              >
+                <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
+                <strong> Enviar informe </strong>
+              </Button>
+              <hr />
+            </center>
+          </div>
         )}
         <center>
           <Button
