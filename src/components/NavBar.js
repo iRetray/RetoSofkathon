@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, NavItem, NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
 import iconNav from "../images/brand.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBarCollapse = (props) => {
   return (
@@ -9,7 +10,6 @@ const NavBarCollapse = (props) => {
       <Navbar
         className="navbar-dark bg-dark"
         light
-        style={{ marginBottom: "10px"}}
       >
         <Nav className="mr-auto" navbar style={{ minHeight: '60px'}}>
           <NavItem>
