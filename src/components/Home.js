@@ -5,15 +5,25 @@ import { Jumbotron, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import monsterHome from "../images/monsterHome.png";
-import enterprise from "../images/enterprise.png"
+import enterprise from "../images/enterprise.png";
 
 export default class Home extends React.Component {
+  verificarSesion() {
+    if (localStorage.getItem("userSession")) {
+      window.location = "/reporter";
+    }
+  }
+
+  componentDidMount() {
+    this.verificarSesion();
+  }
+
   render() {
     return (
       <div>
         {document.body.setAttribute("style", "background-color: white;")}
         <NavBar />
-        <div className="container" style={{marginTop: '30px'}}>
+        <div className="container" style={{ marginTop: "30px" }}>
           <div className="row align-items-center">
             <div className="col-sm-6">
               <img
@@ -24,7 +34,9 @@ export default class Home extends React.Component {
               />
             </div>
             <div className="col-sm-6">
-              <Jumbotron style={{marginBottom: '-30px', paddingBottom: '10px'}}>
+              <Jumbotron
+                style={{ paddingBottom: "10px", marginBottom: "20px" }}
+              >
                 <center>
                   <h2>
                     ¿Cansado de llenar formularios{" "}

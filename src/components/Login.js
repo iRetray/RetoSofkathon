@@ -18,12 +18,6 @@ export default class Login extends React.Component {
   };
 
   render() {
-    const tailLayout = {
-      wrapperCol: {
-        offset: 9,
-        span: 16,
-      },
-    };
 
     const layout = {
       labelCol: {
@@ -39,9 +33,9 @@ export default class Login extends React.Component {
       padding: "24px",
       background: "#fff",
       maxWidth: "500px",
-      margin: "40px",
-      marginLeft: "auto",
-      marginRight: "auto",
+      margin: "40px",     
+      marginLeft: "15px",
+      marginRight: "15px",
     };
 
     const onFinish = (values) => {
@@ -152,7 +146,6 @@ export default class Login extends React.Component {
                   message: "¡Debes insertar tu correo!",
                 },
               ]}
-              style={{ marginLeft: "25%" }}
             >
               <Input
                 prefix={<MailOutlined className="site-form-item-icon" />}
@@ -168,7 +161,6 @@ export default class Login extends React.Component {
                   message: "¡Debes insertar tu contraseña!",
                 },
               ]}
-              style={{ marginLeft: "25%" }}
             >
               <Input.Password
                 prefix={<LockOutlined className="site-form-item-icon" />}
@@ -176,7 +168,7 @@ export default class Login extends React.Component {
               />
             </Form.Item>
 
-            <Form.Item {...tailLayout}>
+            <Form.Item>
               <Button type="primary" htmlType="submit">
                 Iniciar sesión
               </Button>
