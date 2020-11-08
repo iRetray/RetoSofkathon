@@ -8,15 +8,6 @@ import monsterHome from "../images/monsterHome.png";
 import enterprise from "../images/enterprise.png";
 
 export default class Home extends React.Component {
-  verificarSesion() {
-    if (localStorage.getItem("userSession")) {
-      window.location = "/reporter";
-    }
-  }
-
-  componentDidMount() {
-    this.verificarSesion();
-  }
 
   render() {
     return (

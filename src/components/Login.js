@@ -17,6 +17,16 @@ export default class Login extends React.Component {
     visibleModalNoRegistered: false,
   };
 
+  verificarSesion() {
+    if (localStorage.getItem("userSession")) {
+      window.location = "/reporter";
+    }
+  }
+
+  componentDidMount() {
+    this.verificarSesion();
+  }
+
   render() {
 
     const layout = {
