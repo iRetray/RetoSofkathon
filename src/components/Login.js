@@ -42,7 +42,7 @@ export default class Login extends React.Component {
       minHeight: "280px",
       padding: "24px",
       background: "#fff",
-      maxWidth: "500px",
+      maxWidth: "350px",
       margin: "40px",     
       marginLeft: "auto",
       marginRight: "auto",
