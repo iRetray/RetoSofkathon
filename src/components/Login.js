@@ -44,8 +44,8 @@ export default class Login extends React.Component {
       background: "#fff",
       maxWidth: "500px",
       margin: "40px",     
-      marginLeft: "15px",
-      marginRight: "15px",
+      marginLeft: "auto",
+      marginRight: "auto",
     };
 
     const onFinish = (values) => {

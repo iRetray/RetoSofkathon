@@ -7,7 +7,7 @@ import monsterRegister from "../images/monsterRegister.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
-import { Button as ButtonReacstrap } from "reactstrap"
+import { Button as ButtonReacstrap } from "reactstrap";
 
 const { Title, Paragraph } = Typography;
 
@@ -15,7 +15,6 @@ export default class Login extends React.Component {
   state = { visibleModal: false };
 
   render() {
-
     const layout = {
       labelCol: {
         span: 5,
@@ -31,8 +30,8 @@ export default class Login extends React.Component {
       background: "#fff",
       maxWidth: "500px",
       margin: "40px",
-      marginLeft: "15px",
-      marginRight: "15px",
+      marginLeft: "auto",
+      marginRight: "auto",
     };
 
     const onFinish = (values) => {
@@ -68,17 +67,15 @@ export default class Login extends React.Component {
             style={{ padding: "50px" }}
           />
           <Title level={4}>
-            <center>
-            Registro de usuario realizado correctamente
-            </center>
+            <center>Registro de usuario realizado correctamente</center>
           </Title>
           <center>
-          <Link to="/login">
-            <ButtonReacstrap color="primary">
-            <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon>{" "} Iniciar{" "}
-              <strong> Speakly </strong>
-            </ButtonReacstrap>
-          </Link>
+            <Link to="/login">
+              <ButtonReacstrap color="primary">
+                <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon> Iniciar{" "}
+                <strong> Speakly </strong>
+              </ButtonReacstrap>
+            </Link>
           </center>
         </Modal>
         {document.body.setAttribute("style", "background-color: #F0F2F5;")}
