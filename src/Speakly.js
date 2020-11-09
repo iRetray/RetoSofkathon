@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./components/Home"
+import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Reporter from "./components/Reporter";
-import NotFound from "./components/NotFound"
+import NotFound from "./components/NotFound";
 
 export default class Speakly extends React.Component {
+  
   render() {
     return (
       <BrowserRouter>
